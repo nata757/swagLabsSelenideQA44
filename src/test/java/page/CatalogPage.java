@@ -2,25 +2,18 @@ package page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import org.testng.annotations.Test;
+import io.qameta.allure.Step;
+
+
 
 import static com.codeborne.selenide.Selenide.$x;
 
-public class CatalogPage {
+public class CatalogPage extends HeaderAndFooter {
     private SelenideElement pageTitel = $x("//span[@class=\"title\"]");
 
+    //@Step("The catalog page has opened")
 
-    public void  isTitelVisible(){
+    public void  isTitleVisible(){
         pageTitel.shouldBe(Condition.visible).shouldHave(Condition.exactText("Products"));
-
     }
-@Test
-    public void  loginWithWrongPassword(){
-
-}
-@Test
-public void  loginWithWrongLogin(){
-
-}
-
 }
